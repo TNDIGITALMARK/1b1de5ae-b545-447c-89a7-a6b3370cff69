@@ -1,0 +1,461 @@
+{
+  "projectId": "1b1de5ae-b545-447c-89a7-a6b3370cff69",
+  "userId": "hw8u8FgXeBcQGo9CRezTWmEivX92",
+  "version": "1.0.0",
+  "generatedAt": "2025-09-13T18:53:26.481Z",
+  "components": {
+    "phoenix-1757789606463": {
+      "phoenixId": "phoenix-1757789606463",
+      "componentName": "Error",
+      "filePath": "src/app/error.tsx",
+      "lineNumber": 5,
+      "columnNumber": 15,
+      "sourceCode": "export default function Error() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"text-4xl font-bold mb-4\">500 - Server Error</h1>\n        <p className=\"text-xl mb-4\">Something went wrong. Please try again later.</p>\n        <a href=\"/\" className=\"text-blue-500 hover:text-blue-700 underline\">\n          Return to Home\n        </a>\n      </div>\n    </div>\n  );\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757789606464": {
+      "phoenixId": "phoenix-1757789606464",
+      "componentName": "GlobalError",
+      "filePath": "src/app/global-error.tsx",
+      "lineNumber": 5,
+      "columnNumber": 15,
+      "sourceCode": "export default function GlobalError({\n  error,\n  reset,\n}: {\n  error: Error & { digest?: string }\n  reset: () => void\n}) {\n  return (\n    <html>\n      <body>\n        <div style={{\n          minHeight: '100vh',\n          display: 'flex',\n          alignItems: 'center',\n          justifyContent: 'center',\n          padding: '2rem',\n          fontFamily: 'system-ui, sans-serif'\n        }}>\n          <div style={{ textAlign: 'center', maxWidth: '500px' }}>\n            <h1 style={{ fontSize: '2rem', marginBottom: '1rem', color: '#dc2626' }}>\n              Something went wrong!\n            </h1>\n            <p style={{ fontSize: '1.1rem', marginBottom: '2rem', color: '#6b7280' }}>\n              The application encountered an unexpected error. This is likely temporary.\n            </p>\n            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>\n              <button\n                onClick={reset}\n                style={{\n                  padding: '0.75rem 1.5rem',\n                  backgroundColor: '#3b82f6',\n                  color: 'white',\n                  border: 'none',\n                  borderRadius: '0.5rem',\n                  cursor: 'pointer',\n                  fontSize: '1rem'\n                }}\n              >\n                Try Again\n              </button>\n              <button\n                onClick={() => window.location.href = '/'}\n                style={{\n                  padding: '0.75rem 1.5rem',\n                  backgroundColor: '#6b7280',\n                  color: 'white',\n                  border: 'none',\n                  borderRadius: '0.5rem',\n                  cursor: 'pointer',\n                  fontSize: '1rem'\n                }}\n              >\n                Go Home\n              </button>\n            </div>\n            {process.env.NODE_ENV === 'development' && (\n              <details style={{ marginTop: '2rem', textAlign: 'left' }}>\n                <summary style={{ cursor: 'pointer', fontWeight: 'bold' }}>\n                  Error Details (Development Only)\n                </summary>\n                <pre style={{ \n                  marginTop: '1rem', \n                  padding: '1rem', \n                  backgroundColor: '#f3f4f6', \n                  borderRadius: '0.5rem',\n                  fontSize: '0.875rem',\n                  overflow: 'auto'\n                }}>\n                  {error.message}\n                  {error.stack && '\\n\\nStack trace:\\n' + error.stack}\n                </pre>\n              </details>\n            )}\n          </div>\n        </div>\n      </body>\n    </html>\n  )\n}",
+      "props": [
+        {
+          "name": "error",
+          "type": "unknown",
+          "required": false
+        },
+        {
+          "name": "reset",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757789606465": {
+      "phoenixId": "phoenix-1757789606465",
+      "componentName": "RootLayout",
+      "filePath": "src/app/layout.tsx",
+      "lineNumber": 25,
+      "columnNumber": 15,
+      "sourceCode": "export default function RootLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode;\n}>) {\n  return (\n    <html lang=\"en\" suppressHydrationWarning>\n      <body\n        className={`${geistSans.variable} ${geistMono.variable} antialiased`}\n      >\n        <QueryProvider>\n          <ThemeProvider\n            attribute=\"class\"\n            defaultTheme=\"system\"\n            enableSystem\n            disableTransitionOnChange\n          >\n            <TooltipProvider>\n              {children}\n              <Toaster />\n              <Sonner />\n            </TooltipProvider>\n          </ThemeProvider>\n        </QueryProvider>\n      </body>\n    </html>\n  );\n}",
+      "props": [
+        {
+          "name": "children",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757789606466": {
+      "phoenixId": "phoenix-1757789606466",
+      "componentName": "Loading",
+      "filePath": "src/app/loading.tsx",
+      "lineNumber": 1,
+      "columnNumber": 15,
+      "sourceCode": "export default function Loading() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <p className=\"text-xl\">Loading...</p>\n      </div>\n    </div>\n  );\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757789606467": {
+      "phoenixId": "phoenix-1757789606467",
+      "componentName": "NotFound",
+      "filePath": "src/app/not-found.tsx",
+      "lineNumber": 3,
+      "columnNumber": 15,
+      "sourceCode": "export default function NotFound() {\n  return (\n    <div className=\"min-h-screen flex items-center justify-center\">\n      <div className=\"text-center\">\n        <h1 className=\"text-4xl font-bold mb-4\">404 - Page Not Found</h1>\n        <p className=\"text-xl mb-4\">The page you are looking for does not exist.</p>\n        <a href=\"/\" className=\"text-blue-500 hover:text-blue-700 underline\">\n          Return to Home\n        </a>\n      </div>\n    </div>\n  );\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757789606468": {
+      "phoenixId": "phoenix-1757789606468",
+      "componentName": "Index",
+      "filePath": "src/app/page.tsx",
+      "lineNumber": 7,
+      "columnNumber": 15,
+      "sourceCode": "export default function Index() {\n  return (\n    <div className=\"min-h-screen bg-background\">\n      <Header />\n      <div className=\"flex\">\n        <Sidebar />\n        <main className=\"flex-1 px-4 py-6\">\n          <Feed />\n        </main>\n      </div>\n    </div>\n  );\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757789606469": {
+      "phoenixId": "phoenix-1757789606469",
+      "componentName": "Feed",
+      "filePath": "src/components/feed.tsx",
+      "lineNumber": 54,
+      "columnNumber": 7,
+      "sourceCode": "export function Feed() {\n  return (\n    <div className=\"max-w-2xl mx-auto space-y-6\">\n      {/* Post Creator */}\n      <PostCreator />\n      \n      {/* Posts Feed */}\n      <div className=\"space-y-4\">\n        {mockPosts.map((post) => (\n          <PostCard key={post.id} post={post} />\n        ))}\n      </div>\n    </div>\n  )\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757789606470": {
+      "phoenixId": "phoenix-1757789606470",
+      "componentName": "Header",
+      "filePath": "src/components/header.tsx",
+      "lineNumber": 9,
+      "columnNumber": 7,
+      "sourceCode": "export function Header() {\n  return (\n    <header className=\"sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60\">\n      <div className=\"container flex h-16 items-center justify-between px-4\">\n        {/* Logo */}\n        <div className=\"flex items-center space-x-2\">\n          <div className=\"text-2xl font-bold text-primary\">Ronim</div>\n        </div>\n\n        {/* Search Bar */}\n        <div className=\"flex-1 max-w-md mx-4\">\n          <div className=\"relative\">\n            <Search className=\"absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4\" />\n            <Input\n              type=\"search\"\n              placeholder=\"Search Ronim...\"\n              className=\"pl-10 bg-muted/50\"\n            />\n          </div>\n        </div>\n\n        {/* Navigation Icons */}\n        <div className=\"flex items-center space-x-2\">\n          <Button variant=\"ghost\" size=\"sm\" className=\"relative\">\n            <Home className=\"h-5 w-5\" />\n          </Button>\n          \n          <Button variant=\"ghost\" size=\"sm\" className=\"relative\">\n            <Users className=\"h-5 w-5\" />\n          </Button>\n          \n          <Button variant=\"ghost\" size=\"sm\" className=\"relative\">\n            <MessageCircle className=\"h-5 w-5\" />\n            <Badge className=\"absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 text-xs\">\n              3\n            </Badge>\n          </Button>\n          \n          <Button variant=\"ghost\" size=\"sm\" className=\"relative\">\n            <Bell className=\"h-5 w-5\" />\n            <Badge className=\"absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 text-xs\">\n              5\n            </Badge>\n          </Button>\n          \n          {/* Profile Avatar */}\n          <Avatar className=\"h-8 w-8 cursor-pointer\">\n            <AvatarImage src=\"/placeholder.svg\" alt=\"Profile\" />\n            <AvatarFallback>JD</AvatarFallback>\n          </Avatar>\n        </div>\n      </div>\n    </header>\n  )\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757789606471": {
+      "phoenixId": "phoenix-1757789606471",
+      "componentName": "LoginForm",
+      "filePath": "src/components/login-form.tsx",
+      "lineNumber": 10,
+      "columnNumber": 7,
+      "sourceCode": "export function LoginForm() {\n  const [isLogin, setIsLogin] = useState(true)\n\n  return (\n    <div className=\"min-h-screen flex items-center justify-center bg-background p-4\">\n      <Card className=\"w-full max-w-md\">\n        <CardHeader className=\"text-center\">\n          <CardTitle className=\"text-3xl font-bold text-primary\">Ronim</CardTitle>\n          <CardDescription>\n            {isLogin \n              ? \"Sign in to connect with friends\" \n              : \"Join Ronim to start connecting\"\n            }\n          </CardDescription>\n        </CardHeader>\n        \n        <CardContent className=\"space-y-4\">\n          {!isLogin && (\n            <div className=\"space-y-2\">\n              <Label htmlFor=\"name\">Full Name</Label>\n              <Input id=\"name\" placeholder=\"Enter your full name\" />\n            </div>\n          )}\n          \n          <div className=\"space-y-2\">\n            <Label htmlFor=\"email\">Email</Label>\n            <Input id=\"email\" type=\"email\" placeholder=\"Enter your email\" />\n          </div>\n          \n          <div className=\"space-y-2\">\n            <Label htmlFor=\"password\">Password</Label>\n            <Input id=\"password\" type=\"password\" placeholder=\"Enter your password\" />\n          </div>\n          \n          {!isLogin && (\n            <div className=\"space-y-2\">\n              <Label htmlFor=\"confirmPassword\">Confirm Password</Label>\n              <Input id=\"confirmPassword\" type=\"password\" placeholder=\"Confirm your password\" />\n            </div>\n          )}\n          \n          <Button className=\"w-full\">\n            {isLogin ? \"Sign In\" : \"Create Account\"}\n          </Button>\n          \n          <Separator />\n          \n          <div className=\"text-center text-sm\">\n            {isLogin ? (\n              <>\n                Don't have an account?{\" \"}\n                <button \n                  onClick={() => setIsLogin(false)}\n                  className=\"text-primary hover:underline font-medium\"\n                >\n                  Sign up\n                </button>\n              </>\n            ) : (\n              <>\n                Already have an account?{\" \"}\n                <button \n                  onClick={() => setIsLogin(true)}\n                  className=\"text-primary hover:underline font-medium\"\n                >\n                  Sign in\n                </button>\n              </>\n            )}\n          </div>\n        </CardContent>\n      </Card>\n    </div>\n  )\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "form-validation",
+        "input-handling",
+        "careful-modification",
+        "test-thoroughly",
+        "state-management"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "hooks": [
+          "useState"
+        ],
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757789606472": {
+      "phoenixId": "phoenix-1757789606472",
+      "componentName": "PostCard",
+      "filePath": "src/components/post-card.tsx",
+      "lineNumber": 32,
+      "columnNumber": 7,
+      "sourceCode": "export function PostCard({ post }: PostCardProps) {\n  const [isLiked, setIsLiked] = useState(post.isLiked)\n  const [likes, setLikes] = useState(post.likes)\n\n  const handleLike = () => {\n    setIsLiked(!isLiked)\n    setLikes(isLiked ? likes - 1 : likes + 1)\n  }\n\n  return (\n    <Card>\n      <CardHeader className=\"pb-3\">\n        <div className=\"flex items-center justify-between\">\n          <div className=\"flex items-center space-x-3\">\n            <Avatar className=\"h-10 w-10\">\n              <AvatarImage src={post.author.avatar} alt={post.author.name} />\n              <AvatarFallback>\n                {post.author.name.split(\" \").map(n => n[0]).join(\"\")}\n              </AvatarFallback>\n            </Avatar>\n            \n            <div>\n              <h4 className=\"font-semibold text-sm\">{post.author.name}</h4>\n              <p className=\"text-xs text-muted-foreground\">@{post.author.username} · {post.timestamp}</p>\n            </div>\n          </div>\n          \n          <Button variant=\"ghost\" size=\"sm\">\n            <MoreHorizontal className=\"h-4 w-4\" />\n          </Button>\n        </div>\n      </CardHeader>\n      \n      <CardContent className=\"pt-0\">\n        <p className=\"text-sm mb-3 leading-relaxed\">{post.content}</p>\n        \n        {post.image && (\n          <div className=\"mb-3\">\n            <img \n              src={post.image} \n              alt=\"Post image\" \n              className=\"w-full rounded-lg border bg-muted max-h-96 object-cover\"\n            />\n          </div>\n        )}\n        \n        <Separator className=\"my-3\" />\n        \n        {/* Engagement Stats */}\n        <div className=\"flex items-center justify-between text-sm text-muted-foreground mb-2\">\n          <span>{likes} likes</span>\n          <div className=\"flex space-x-4\">\n            <span>{post.comments} comments</span>\n            <span>{post.shares} shares</span>\n          </div>\n        </div>\n        \n        <Separator className=\"mb-3\" />\n        \n        {/* Action Buttons */}\n        <div className=\"flex items-center justify-between\">\n          <Button \n            variant=\"ghost\" \n            size=\"sm\" \n            onClick={handleLike}\n            className={`flex-1 ${isLiked ? \"text-red-500\" : \"\"}`}\n          >\n            <Heart className={`h-4 w-4 mr-2 ${isLiked ? \"fill-red-500\" : \"\"}`} />\n            Like\n          </Button>\n          \n          <Button variant=\"ghost\" size=\"sm\" className=\"flex-1\">\n            <MessageCircle className=\"h-4 w-4 mr-2\" />\n            Comment\n          </Button>\n          \n          <Button variant=\"ghost\" size=\"sm\" className=\"flex-1\">\n            <Share2 className=\"h-4 w-4 mr-2\" />\n            Share\n          </Button>\n        </div>\n      </CardContent>\n    </Card>\n  )\n}",
+      "props": [
+        {
+          "name": "post",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly",
+        "state-management"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "hooks": [
+          "useState",
+          "useState"
+        ],
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757789606473": {
+      "phoenixId": "phoenix-1757789606473",
+      "componentName": "PostCreator",
+      "filePath": "src/components/post-creator.tsx",
+      "lineNumber": 11,
+      "columnNumber": 7,
+      "sourceCode": "export function PostCreator() {\n  const [postContent, setPostContent] = useState(\"\")\n\n  const handlePost = () => {\n    if (postContent.trim()) {\n      // Here you would typically send the post to your backend\n      console.log(\"Posting:\", postContent)\n      setPostContent(\"\")\n    }\n  }\n\n  return (\n    <Card>\n      <CardContent className=\"p-4\">\n        <div className=\"flex space-x-3\">\n          <Avatar className=\"h-10 w-10\">\n            <AvatarImage src=\"/placeholder.svg\" alt=\"Your profile\" />\n            <AvatarFallback>JD</AvatarFallback>\n          </Avatar>\n          \n          <div className=\"flex-1\">\n            <Textarea\n              placeholder=\"What's on your mind, John?\"\n              value={postContent}\n              onChange={(e) => setPostContent(e.target.value)}\n              className=\"min-h-[80px] resize-none border-0 shadow-none focus-visible:ring-0 p-0 text-base\"\n            />\n            \n            <Separator className=\"my-3\" />\n            \n            <div className=\"flex items-center justify-between\">\n              <div className=\"flex items-center space-x-4\">\n                <Button variant=\"ghost\" size=\"sm\" className=\"text-muted-foreground\">\n                  <Image className=\"h-4 w-4 mr-2\" aria-hidden=\"true\" />\n                  Photo\n                </Button>\n                \n                <Button variant=\"ghost\" size=\"sm\" className=\"text-muted-foreground\">\n                  <Smile className=\"h-4 w-4 mr-2\" />\n                  Feeling\n                </Button>\n                \n                <Button variant=\"ghost\" size=\"sm\" className=\"text-muted-foreground\">\n                  <MapPin className=\"h-4 w-4 mr-2\" />\n                  Location\n                </Button>\n                \n                <Button variant=\"ghost\" size=\"sm\" className=\"text-muted-foreground\">\n                  <Calendar className=\"h-4 w-4 mr-2\" />\n                  Event\n                </Button>\n              </div>\n              \n              <Button \n                onClick={handlePost} \n                disabled={!postContent.trim()}\n                size=\"sm\"\n              >\n                Post\n              </Button>\n            </div>\n          </div>\n        </div>\n      </CardContent>\n    </Card>\n  )\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly",
+        "state-management"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "hooks": [
+          "useState"
+        ],
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757789606474": {
+      "phoenixId": "phoenix-1757789606474",
+      "componentName": "QueryProvider",
+      "filePath": "src/components/query-provider.tsx",
+      "lineNumber": 6,
+      "columnNumber": 7,
+      "sourceCode": "export function QueryProvider({ children }: { children: React.ReactNode }) {\n  const [queryClient] = useState(() => new QueryClient())\n\n  return (\n    <QueryClientProvider client={queryClient}>\n      {children}\n    </QueryClientProvider>\n  )\n}",
+      "props": [
+        {
+          "name": "children",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "state-management"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "hooks": [
+          "useState"
+        ],
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757789606475": {
+      "phoenixId": "phoenix-1757789606475",
+      "componentName": "Sidebar",
+      "filePath": "src/components/sidebar.tsx",
+      "lineNumber": 9,
+      "columnNumber": 7,
+      "sourceCode": "export function Sidebar() {\n  return (\n    <aside className=\"w-64 min-h-screen border-r bg-card/50 p-4\">\n      {/* User Profile Section */}\n      <Card className=\"mb-4\">\n        <CardContent className=\"p-4\">\n          <div className=\"flex items-center space-x-3\">\n            <Avatar className=\"h-12 w-12\">\n              <AvatarImage src=\"/placeholder.svg\" alt=\"John Doe\" />\n              <AvatarFallback>JD</AvatarFallback>\n            </Avatar>\n            <div>\n              <h3 className=\"font-semibold\">John Doe</h3>\n              <p className=\"text-sm text-muted-foreground\">Software Developer</p>\n            </div>\n          </div>\n        </CardContent>\n      </Card>\n\n      {/* Navigation Menu */}\n      <nav className=\"space-y-1\">\n        <Button variant=\"ghost\" className=\"w-full justify-start\" size=\"sm\">\n          <Home className=\"mr-3 h-4 w-4\" />\n          Home\n        </Button>\n        \n        <Button variant=\"ghost\" className=\"w-full justify-start\" size=\"sm\">\n          <Users className=\"mr-3 h-4 w-4\" />\n          Friends\n        </Button>\n        \n        <Button variant=\"ghost\" className=\"w-full justify-start\" size=\"sm\">\n          <MessageCircle className=\"mr-3 h-4 w-4\" />\n          Messages\n        </Button>\n        \n        <Button variant=\"ghost\" className=\"w-full justify-start\" size=\"sm\">\n          <Calendar className=\"mr-3 h-4 w-4\" />\n          Events\n        </Button>\n        \n        <Button variant=\"ghost\" className=\"w-full justify-start\" size=\"sm\">\n          <Bookmark className=\"mr-3 h-4 w-4\" />\n          Saved\n        </Button>\n        \n        <Button variant=\"ghost\" className=\"w-full justify-start\" size=\"sm\">\n          <TrendingUp className=\"mr-3 h-4 w-4\" />\n          Trending\n        </Button>\n      </nav>\n\n      <Separator className=\"my-4\" />\n\n      {/* Quick Stats */}\n      <div className=\"space-y-2\">\n        <h4 className=\"text-sm font-medium text-muted-foreground\">Quick Stats</h4>\n        <div className=\"space-y-1 text-sm\">\n          <div className=\"flex justify-between\">\n            <span>Friends</span>\n            <span className=\"font-medium\">247</span>\n          </div>\n          <div className=\"flex justify-between\">\n            <span>Posts</span>\n            <span className=\"font-medium\">89</span>\n          </div>\n          <div className=\"flex justify-between\">\n            <span>Photos</span>\n            <span className=\"font-medium\">156</span>\n          </div>\n        </div>\n      </div>\n\n      <Separator className=\"my-4\" />\n\n      {/* Settings */}\n      <Button variant=\"ghost\" className=\"w-full justify-start\" size=\"sm\">\n        <Settings className=\"mr-3 h-4 w-4\" />\n        Settings\n      </Button>\n    </aside>\n  )\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757789606476": {
+      "phoenixId": "phoenix-1757789606476",
+      "componentName": "ThemeProvider",
+      "filePath": "src/components/theme-provider.tsx",
+      "lineNumber": 6,
+      "columnNumber": 7,
+      "sourceCode": "export function ThemeProvider({\n  children,\n  ...props\n}: React.ComponentProps<typeof NextThemesProvider>) {\n  return <NextThemesProvider {...props}>{children}</NextThemesProvider>\n}",
+      "props": [
+        {
+          "name": "children",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "simple"
+      }
+    },
+    "phoenix-1757789606477": {
+      "phoenixId": "phoenix-1757789606477",
+      "componentName": "Badge",
+      "filePath": "src/components/ui/badge.tsx",
+      "lineNumber": 30,
+      "columnNumber": 0,
+      "sourceCode": "function Badge({ className, variant, ...props }: BadgeProps) {\n  return (\n    <div className={cn(badgeVariants({ variant }), className)} {...props} />\n  )\n}",
+      "props": [
+        {
+          "name": "className",
+          "type": "unknown",
+          "required": false
+        },
+        {
+          "name": "variant",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757789606478": {
+      "phoenixId": "phoenix-1757789606478",
+      "componentName": "Calendar",
+      "filePath": "src/components/ui/calendar.tsx",
+      "lineNumber": 10,
+      "columnNumber": 0,
+      "sourceCode": "function Calendar({\n  className,\n  classNames,\n  showOutsideDays = true,\n  ...props\n}: CalendarProps) {\n  return (\n    <DayPicker\n      showOutsideDays={showOutsideDays}\n      className={cn(\"p-3\", className)}\n      classNames={{\n        months: \"flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0\",\n        month: \"space-y-4\",\n        caption: \"flex justify-center pt-1 relative items-center\",\n        caption_label: \"text-sm font-medium\",\n        nav: \"space-x-1 flex items-center\",\n        nav_button: cn(\n          buttonVariants({ variant: \"outline\" }),\n          \"h-7 w-7 bg-transparent p-0 opacity-50 hover:opacity-100\"\n        ),\n        nav_button_previous: \"absolute left-1\",\n        nav_button_next: \"absolute right-1\",\n        table: \"w-full border-collapse space-y-1\",\n        head_row: \"flex\",\n        head_cell:\n          \"text-muted-foreground rounded-md w-9 font-normal text-[0.8rem]\",\n        row: \"flex w-full mt-2\",\n        cell: \"h-9 w-9 text-center text-sm p-0 relative [&:has([aria-selected].day-range-end)]:rounded-r-md [&:has([aria-selected].day-outside)]:bg-accent/50 [&:has([aria-selected])]:bg-accent first:[&:has([aria-selected])]:rounded-l-md last:[&:has([aria-selected])]:rounded-r-md focus-within:relative focus-within:z-20\",\n        day: cn(\n          buttonVariants({ variant: \"ghost\" }),\n          \"h-9 w-9 p-0 font-normal aria-selected:opacity-100\"\n        ),\n        day_range_end: \"day-range-end\",\n        day_selected:\n          \"bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground\",\n        day_today: \"bg-accent text-accent-foreground\",\n        day_outside:\n          \"day-outside text-muted-foreground opacity-50 aria-selected:bg-accent/50 aria-selected:text-muted-foreground aria-selected:opacity-30\",\n        day_disabled: \"text-muted-foreground opacity-50\",\n        day_range_middle:\n          \"aria-selected:bg-accent aria-selected:text-accent-foreground\",\n        day_hidden: \"invisible\",\n        ...classNames,\n      }}\n      components={{\n        Chevron: (props) => props.orientation === 'left' ? <ChevronLeft className=\"h-4 w-4\" /> : <ChevronRight className=\"h-4 w-4\" />,\n      }}\n      {...props}\n    />\n  );\n}",
+      "props": [
+        {
+          "name": "className",
+          "type": "unknown",
+          "required": false
+        },
+        {
+          "name": "classNames",
+          "type": "unknown",
+          "required": false
+        },
+        {
+          "name": "showOutsideDays",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "complex"
+      }
+    },
+    "phoenix-1757789606479": {
+      "phoenixId": "phoenix-1757789606479",
+      "componentName": "Skeleton",
+      "filePath": "src/components/ui/skeleton.tsx",
+      "lineNumber": 3,
+      "columnNumber": 0,
+      "sourceCode": "function Skeleton({\n  className,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement>) {\n  return (\n    <div\n      className={cn(\"animate-pulse rounded-md bg-muted\", className)}\n      {...props}\n    />\n  )\n}",
+      "props": [
+        {
+          "name": "className",
+          "type": "unknown",
+          "required": false
+        }
+      ],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "simple"
+      }
+    },
+    "phoenix-1757789606480": {
+      "phoenixId": "phoenix-1757789606480",
+      "componentName": "Toaster",
+      "filePath": "src/components/ui/toaster.tsx",
+      "lineNumber": 13,
+      "columnNumber": 7,
+      "sourceCode": "export function Toaster() {\n  const { toasts } = useToast()\n\n  return (\n    <ToastProvider>\n      {toasts.map(function ({ id, title, description, action, ...props }) {\n        return (\n          <Toast key={id} {...props}>\n            <div className=\"grid gap-1\">\n              {title && <ToastTitle>{title}</ToastTitle>}\n              {description && (\n                <ToastDescription>{description}</ToastDescription>\n              )}\n            </div>\n            {action}\n            <ToastClose />\n          </Toast>\n        )\n      })}\n      <ToastViewport />\n    </ToastProvider>\n  )\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "hooks": [
+          "useToast"
+        ],
+        "complexity": "moderate"
+      }
+    },
+    "phoenix-1757789606481": {
+      "phoenixId": "phoenix-1757789606481",
+      "componentName": "UserProfile",
+      "filePath": "src/components/user-profile.tsx",
+      "lineNumber": 45,
+      "columnNumber": 7,
+      "sourceCode": "export function UserProfile() {\n  return (\n    <div className=\"min-h-screen bg-background\">\n      {/* Cover Photo & Profile Header */}\n      <div className=\"relative\">\n        <div className=\"h-48 bg-gradient-to-r from-blue-500 to-purple-600 relative\">\n          <img \n            src={mockUser.coverImage} \n            alt=\"Cover\" \n            className=\"w-full h-full object-cover opacity-50\"\n          />\n        </div>\n        \n        {/* Profile Picture & Basic Info */}\n        <div className=\"relative px-4 -mt-16\">\n          <div className=\"flex items-end space-x-4\">\n            <Avatar className=\"h-32 w-32 border-4 border-background\">\n              <AvatarImage src={mockUser.avatar} alt={mockUser.name} />\n              <AvatarFallback className=\"text-2xl\">JD</AvatarFallback>\n            </Avatar>\n            \n            <div className=\"pb-4 flex-1\">\n              <h1 className=\"text-2xl font-bold\">{mockUser.name}</h1>\n              <p className=\"text-muted-foreground\">@{mockUser.username}</p>\n              <div className=\"flex space-x-6 mt-2\">\n                <span className=\"text-sm\"><strong>{mockUser.stats.posts}</strong> Posts</span>\n                <span className=\"text-sm\"><strong>{mockUser.stats.followers}</strong> Followers</span>\n                <span className=\"text-sm\"><strong>{mockUser.stats.following}</strong> Following</span>\n              </div>\n            </div>\n            \n            <div className=\"pb-4\">\n              <Button>Follow</Button>\n            </div>\n          </div>\n        </div>\n      </div>\n      \n      {/* Profile Content */}\n      <div className=\"container mx-auto px-4 py-6\">\n        <div className=\"grid grid-cols-1 lg:grid-cols-3 gap-6\">\n          {/* Left Sidebar - Profile Info */}\n          <div className=\"space-y-4\">\n            <Card>\n              <CardContent className=\"p-4\">\n                <h3 className=\"font-semibold mb-3\">About</h3>\n                <p className=\"text-sm text-muted-foreground mb-4\">{mockUser.bio}</p>\n                \n                <div className=\"space-y-2 text-sm\">\n                  <div className=\"flex items-center text-muted-foreground\">\n                    <MapPin className=\"h-4 w-4 mr-2\" />\n                    {mockUser.location}\n                  </div>\n                  \n                  <div className=\"flex items-center text-muted-foreground\">\n                    <Link2 className=\"h-4 w-4 mr-2\" />\n                    <a href={`https://${mockUser.website}`} className=\"text-primary hover:underline\">\n                      {mockUser.website}\n                    </a>\n                  </div>\n                  \n                  <div className=\"flex items-center text-muted-foreground\">\n                    <Calendar className=\"h-4 w-4 mr-2\" />\n                    Joined {mockUser.joinDate}\n                  </div>\n                </div>\n              </CardContent>\n            </Card>\n            \n            {/* Interests */}\n            <Card>\n              <CardContent className=\"p-4\">\n                <h3 className=\"font-semibold mb-3\">Interests</h3>\n                <div className=\"flex flex-wrap gap-2\">\n                  <Badge variant=\"secondary\">JavaScript</Badge>\n                  <Badge variant=\"secondary\">React</Badge>\n                  <Badge variant=\"secondary\">Photography</Badge>\n                  <Badge variant=\"secondary\">Travel</Badge>\n                  <Badge variant=\"secondary\">Coffee</Badge>\n                </div>\n              </CardContent>\n            </Card>\n          </div>\n          \n          {/* Main Content */}\n          <div className=\"lg:col-span-2\">\n            <Tabs defaultValue=\"posts\" className=\"w-full\">\n              <TabsList className=\"grid w-full grid-cols-4\">\n                <TabsTrigger value=\"posts\">Posts</TabsTrigger>\n                <TabsTrigger value=\"photos\">Photos</TabsTrigger>\n                <TabsTrigger value=\"friends\">Friends</TabsTrigger>\n                <TabsTrigger value=\"about\">About</TabsTrigger>\n              </TabsList>\n              \n              <TabsContent value=\"posts\" className=\"mt-4 space-y-4\">\n                {mockUserPosts.map((post) => (\n                  <PostCard key={post.id} post={post} />\n                ))}\n              </TabsContent>\n              \n              <TabsContent value=\"photos\" className=\"mt-4\">\n                <div className=\"grid grid-cols-3 gap-2\">\n                  {Array.from({ length: 9 }).map((_, i) => (\n                    <div key={i} className=\"aspect-square bg-muted rounded-lg\"></div>\n                  ))}\n                </div>\n              </TabsContent>\n              \n              <TabsContent value=\"friends\" className=\"mt-4\">\n                <div className=\"grid grid-cols-2 gap-4\">\n                  {Array.from({ length: 6 }).map((_, i) => (\n                    <Card key={i}>\n                      <CardContent className=\"p-4 flex items-center space-x-3\">\n                        <Avatar>\n                          <AvatarImage src=\"/placeholder.svg\" />\n                          <AvatarFallback>FR</AvatarFallback>\n                        </Avatar>\n                        <div className=\"flex-1\">\n                          <h4 className=\"font-semibold text-sm\">Friend {i + 1}</h4>\n                          <p className=\"text-xs text-muted-foreground\">Mutual friends</p>\n                        </div>\n                        <Button size=\"sm\" variant=\"outline\">View</Button>\n                      </CardContent>\n                    </Card>\n                  ))}\n                </div>\n              </TabsContent>\n              \n              <TabsContent value=\"about\" className=\"mt-4\">\n                <Card>\n                  <CardContent className=\"p-4\">\n                    <div className=\"space-y-4\">\n                      <div>\n                        <h4 className=\"font-semibold mb-2\">Work</h4>\n                        <p className=\"text-sm text-muted-foreground\">Software Developer at Tech Company</p>\n                      </div>\n                      \n                      <div>\n                        <h4 className=\"font-semibold mb-2\">Education</h4>\n                        <p className=\"text-sm text-muted-foreground\">Computer Science, University</p>\n                      </div>\n                      \n                      <div>\n                        <h4 className=\"font-semibold mb-2\">Places Lived</h4>\n                        <p className=\"text-sm text-muted-foreground\">San Francisco, CA</p>\n                      </div>\n                    </div>\n                  </CardContent>\n                </Card>\n              </TabsContent>\n            </Tabs>\n          </div>\n        </div>\n      </div>\n    </div>\n  )\n}",
+      "props": [],
+      "imports": [],
+      "modificationHints": [
+        "text-update",
+        "style-change",
+        "careful-modification",
+        "test-thoroughly"
+      ],
+      "astAnalysis": {
+        "componentType": "functional",
+        "complexity": "complex"
+      }
+    }
+  },
+  "stats": {
+    "totalComponents": 19,
+    "totalFiles": 69,
+    "processingTimeMs": 349
+  }
+}
