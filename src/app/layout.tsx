@@ -18,8 +18,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "Ronim - Connect with Friends",
+  description: "Join Ronim, the social network that brings people together. Share moments, connect with friends, and discover new communities.",
 };
 
 export default function RootLayout({
